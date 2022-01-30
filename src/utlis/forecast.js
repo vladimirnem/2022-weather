@@ -9,7 +9,8 @@ const forecast = (lot, lang, callback) => {
         } else if (body.error) {
             callback('Bad Request please try again', undefined)
         } else {
-            callback(undefined, body.current.temperature)
+            console.log(body.current.observation_time)
+            callback(undefined, 'It`s ' + body.current.temperature + ' Celcium Degrees outside. In a ' + body.current.observation_time + ' there is ' + body.current.weather_descriptions[0] + ' outside with wind speed of ' + body.current.wind_speed + ' mph.')
         }
     })
 
